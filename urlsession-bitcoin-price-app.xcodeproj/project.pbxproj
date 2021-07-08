@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		6D3667D62694A174009ED3CB /* BitcoinPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3667D52694A174009ED3CB /* BitcoinPriceViewController.swift */; };
+		6D3667DB26954B3D009ED3CB /* BitcoinPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3667DA26954B3D009ED3CB /* BitcoinPriceView.swift */; };
+		6D3667E026954C7C009ED3CB /* CodeViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3667DF26954C7C009ED3CB /* CodeViewProtocol.swift */; };
+		6D3667E32695EF6A009ED3CB /* BitcoinPriceViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3667E22695EF6A009ED3CB /* BitcoinPriceViewData.swift */; };
+		6D9EAFFF269691540069887B /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9EAFFE269691540069887B /* AppFont.swift */; };
 		6DBB2CBB2694960D00970461 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB2CBA2694960D00970461 /* AppDelegate.swift */; };
 		6DBB2CBD2694960D00970461 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB2CBC2694960D00970461 /* SceneDelegate.swift */; };
 		6DBB2CC42694961200970461 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB2CC32694961200970461 /* Assets.xcassets */; };
@@ -18,6 +22,10 @@
 /* Begin PBXFileReference section */
 		68EDF64E651F99044882E8D4 /* Pods_urlsession_bitcoin_price_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_urlsession_bitcoin_price_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D3667D52694A174009ED3CB /* BitcoinPriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinPriceViewController.swift; sourceTree = "<group>"; };
+		6D3667DA26954B3D009ED3CB /* BitcoinPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinPriceView.swift; sourceTree = "<group>"; };
+		6D3667DF26954C7C009ED3CB /* CodeViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewProtocol.swift; sourceTree = "<group>"; };
+		6D3667E22695EF6A009ED3CB /* BitcoinPriceViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinPriceViewData.swift; sourceTree = "<group>"; };
+		6D9EAFFE269691540069887B /* AppFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
 		6DBB2CB72694960D00970461 /* urlsession-bitcoin-price-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "urlsession-bitcoin-price-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DBB2CBA2694960D00970461 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6DBB2CBC2694960D00970461 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +60,7 @@
 		6D3667D32694A114009ED3CB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6D9EB00226969E170069887B /* Strings */,
 				6DBB2CC32694961200970461 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -60,9 +69,84 @@
 		6D3667D42694A127009ED3CB /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				6D3667D52694A174009ED3CB /* BitcoinPriceViewController.swift */,
+				6D3667DD26954C1B009ED3CB /* Commons */,
+				6D3667DC26954BF2009ED3CB /* Module */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		6D3667D726954AC4009ED3CB /* Price */ = {
+			isa = PBXGroup;
+			children = (
+				6D3667D826954AE2009ED3CB /* Controller */,
+				6D3667D926954AED009ED3CB /* View */,
+				6D3667E12695EF4B009ED3CB /* ViewData */,
+			);
+			path = Price;
+			sourceTree = "<group>";
+		};
+		6D3667D826954AE2009ED3CB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6D3667D52694A174009ED3CB /* BitcoinPriceViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6D3667D926954AED009ED3CB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6D3667DA26954B3D009ED3CB /* BitcoinPriceView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6D3667DC26954BF2009ED3CB /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				6D3667D726954AC4009ED3CB /* Price */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		6D3667DD26954C1B009ED3CB /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				6D3667E42695F1BC009ED3CB /* Helpers */,
+				6D3667DE26954C53009ED3CB /* Protocol */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		6D3667DE26954C53009ED3CB /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				6D3667DF26954C7C009ED3CB /* CodeViewProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		6D3667E12695EF4B009ED3CB /* ViewData */ = {
+			isa = PBXGroup;
+			children = (
+				6D3667E22695EF6A009ED3CB /* BitcoinPriceViewData.swift */,
+			);
+			path = ViewData;
+			sourceTree = "<group>";
+		};
+		6D3667E42695F1BC009ED3CB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				6D9EAFFE269691540069887B /* AppFont.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		6D9EB00226969E170069887B /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Strings;
 			sourceTree = "<group>";
 		};
 		6DBB2CAE2694960D00970461 = {
@@ -225,9 +309,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D9EAFFF269691540069887B /* AppFont.swift in Sources */,
+				6D3667E026954C7C009ED3CB /* CodeViewProtocol.swift in Sources */,
 				6DBB2CBB2694960D00970461 /* AppDelegate.swift in Sources */,
 				6DBB2CBD2694960D00970461 /* SceneDelegate.swift in Sources */,
 				6D3667D62694A174009ED3CB /* BitcoinPriceViewController.swift in Sources */,
+				6D3667DB26954B3D009ED3CB /* BitcoinPriceView.swift in Sources */,
+				6D3667E32695EF6A009ED3CB /* BitcoinPriceViewData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
