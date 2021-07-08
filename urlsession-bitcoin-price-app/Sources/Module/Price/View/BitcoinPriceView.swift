@@ -47,8 +47,6 @@ public final class BitcoinPriceView: UIView {
         return view
     }()
     
-//    private var viewData: BitcoinPriceViewData
-    
     public init() {
         super.init(frame: .zero)
         setupView()
@@ -58,13 +56,6 @@ public final class BitcoinPriceView: UIView {
         super.init(frame: frame)
         setupView()
     }
-    
-//    public init(_ viewData: BitcoinPriceViewData) {
-//        self.viewData = viewData
-//        super.init(frame: .zero)
-//        setupView()
-//        build()
-//    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
