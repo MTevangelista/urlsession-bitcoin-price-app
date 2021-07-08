@@ -61,7 +61,7 @@ extension BitcoinPriceViewController {
     }
     
     private func fetchCurrentBitcoinPrice(completion: @escaping (String?, Error?) -> Void) {
-        guard let url = URL(string: "https://blockchain.info/ticker") else { return }
+        guard let url = URL(string: "https://www.mercadobitcoin.net/api/BTC/ticker") else { return }
         let dataTask = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
                 print("Error when making the price query: \(String(describing: error.localizedDescription))")
@@ -71,17 +71,17 @@ extension BitcoinPriceViewController {
             do {
                 guard
                     let jsonObject = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String : AnyObject],
-                    let brl = jsonObject["BRL"],
-                    let bitcoinPrice = brl["buy"] as? Double
+                    let ticker = jsonObject["ticker"],
+                    let last = ticker["last"] as? String
                 else { return completion(nil, error) }
-                let formattedPrice = self.formatPrice(NSNumber(value: bitcoinPrice))
-                print(formattedPrice)
+                guard let last = Double(last) else { return completion(nil, error) }
+                let formattedPrice = self.formatPrice(NSNumber(value: last))
                 completion(formattedPrice, nil)
             } catch let error {
                 print(error.localizedDescription)
-                completion(nil, error)
             }
         }
         dataTask.resume()
     }
+    
 }
